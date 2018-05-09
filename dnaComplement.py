@@ -1,3 +1,5 @@
+import unittest
+
 def DNA_strand(dna):
     dnaList = list(dna)
     complementList = []
@@ -12,10 +14,25 @@ def DNA_strand(dna):
             if d == 'G':
                 complementList.append('C')
         complement = ''.join(complementList)
-        print (complement)
     return complement
 
-DNA_strand(dna = "AAAA")
-DNA_strand("ATTCG")
-DNA_strand("GTAT")
-DNA_strand("AGAGAGCGTGA")
+
+case1 = DNA_strand("AAAA")
+case2 = DNA_strand("ATTCG")
+case3 = DNA_strand("GTAT")
+case4 = DNA_strand("AGAGAGCGTGA")
+
+print (case1, case2, case3, case4)
+
+def test_DNA_strand():
+    assert DNA_strand("AAA") == "TTT"
+    assert DNA_strand("ATTCG") == "TAAGC"
+    assert DNA_strand("GTAT") == "CATA"
+    assert DNA_strand("AGAGAGCGTGA") == "TCTCTCGCACT"
+
+test_DNA_strand()
+
+
+
+
+
